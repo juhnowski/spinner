@@ -1,28 +1,25 @@
-# spinner
-Запуск на Ubuntu 16.10 Server
-1) sudo apt-get install aptitude
-2) sudo aptitude install plymouth
-3) sudo aptitude install plymouth-themes-spinner - для подстраховки, он уже установлен
-4) подменить содержимое каталога /usr/share/plymouth/themes/spinner клоном git clone ...
-5) sudo update-alternatives --config default.plymouth - для подстраховки, если была установлена какая другая тема
-6)  Изменяем файл: /etc/default/grub
-  GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash"
-  GRUB_GFXMODE=640x480
-7) sudo update-grub2
-8) sudo update-initramfs -u
-9) перезагрузка
+п»ї# spinner - РєР°СЃС‚РѕРјРёР·Р°С†РёСЏ С‚РµРјС‹
+# Р—Р°РїСѓСЃРє РЅР° Ubuntu 16.10 Server
+* sudo apt-get install aptitude
+* sudo aptitude install plymouth
+* sudo aptitude install plymouth-themes-spinner - РґР»СЏ РїРѕРґСЃС‚СЂР°С…РѕРІРєРё, РѕРЅ СѓР¶Рµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ
+* РїРѕРґРјРµРЅРёС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ РєР°С‚Р°Р»РѕРіР° /usr/share/plymouth/themes/spinner РєР»РѕРЅРѕРј git clone ...
+* sudo update-alternatives --config default.plymouth - РґР»СЏ РїРѕРґСЃС‚СЂР°С…РѕРІРєРё, РµСЃР»Рё Р±С‹Р»Р° СѓСЃС‚Р°РЅРѕРІР»РµРЅР° РєР°РєР°СЏ РґСЂСѓРіР°СЏ С‚РµРјР°
+* РР·РјРµРЅСЏРµРј С„Р°Р№Р»: /etc/default/grub
+  * GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash"
+  * GRUB_GFXMODE=640x480
+* sudo update-grub2
+* sudo update-initramfs -u
+* РїРµСЂРµР·Р°РіСЂСѓР·РєР°
 
-Запуск на XUbuntu/Ubuntu
-1) sudo aptitude install plymouth plymouth-themes-all
-2) sed -i 's/quiet/quiet splash/g' /etc/default/grub
-3) plymouth-set-default-theme -l
-4) cd /usr/share/plymouth/themes/spinner
-заменить содержимое каталога клоном
-5) plymouth-set-default-theme -R spinfinity
-6) update-grub2
-7) update-initramfs -u
-8) перезагружаемся
-
-если не заработает, то в файле /etc/default/grub надо 
-раскомментировать строчку:
-GRUB_GFXMODE
+# Р—Р°РїСѓСЃРє РЅР° XUbuntu/Ubuntu
+* sudo aptitude install plymouth plymouth-themes-all
+* sed -i 's/quiet/quiet splash/g' /etc/default/grub
+* plymouth-set-default-theme -l
+* cd /usr/share/plymouth/themes/spinner
+* Р·Р°РјРµРЅРёС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ РєР°С‚Р°Р»РѕРіР° РєР»РѕРЅРѕРј
+* plymouth-set-default-theme -R spinfinity
+* update-grub2
+* update-initramfs -u
+* РїРµСЂРµР·Р°РіСЂСѓР¶Р°РµРјСЃСЏ
+* РµСЃР»Рё РЅРµ Р·Р°СЂР°Р±РѕС‚Р°РµС‚, С‚Рѕ РІ С„Р°Р№Р»Рµ /etc/default/grub РЅР°РґРѕ СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂРѕРІР°С‚СЊ СЃС‚СЂРѕС‡РєСѓ РІ /etc/default/grub: GRUB_GFXMODE
